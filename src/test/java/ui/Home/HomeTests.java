@@ -23,42 +23,28 @@ public class HomeTests extends BaseTests {
         secureAreaPage.clickHomeBtn();
     }
 
-    @Test
-    public void testSuccessfulAddToCart(){
-        int index = randomDigits.generateRandomNumber();
-        HomePage.FigureProduct productDetailsBox = homePage.hoverOverItem(index);
-        assertTrue(productDetailsBox.isProductBoxDisplayed(),"Product details not displayed");
-        ProductDetailsPages productDetailsPage = productDetailsBox.clickMore();
-        productDetailsPage.clickAddToCart();
-        assertTrue(productDetailsPage.isCartBoxDisplayed(),"Add to Cart Button doesn't work");
-        assertTrue(productDetailsPage.CheckSuccessfullyAddedItem()
-                        .contains("Product successfully added"),
-                "Product not added to the cart, something went wrong");
-    }
-
     @Test(priority=2, dependsOnMethods={"testSuccessfulLogin"})
-    public void testSuccessfulCheckOut(){
+    public void testSuccessfulCheckOut() {
         int index = randomDigits.generateRandomNumber();
         HomePage.FigureProduct productDetailsBox = homePage.hoverOverItem(index);
-        assertTrue(productDetailsBox.isProductBoxDisplayed(),"Product details not displayed");
+        assertTrue(productDetailsBox.isProductBoxDisplayed(), "Product details not displayed");
         ProductDetailsPages productDetailsPage = productDetailsBox.clickMore();
         productDetailsPage.clickAddToCart();
-        assertTrue(productDetailsPage.isCartBoxDisplayed(),"Add to Cart Button doesn't work");
+        assertTrue(productDetailsPage.isCartBoxDisplayed(), "Add to Cart Button doesn't work");
         assertTrue(productDetailsPage.CheckSuccessfullyAddedItem()
                         .contains("Product successfully added"),
                 "Product not added to the cart, something went wrong");
         CheckOutPage checkOutPage = productDetailsPage.clickCheckOut();
-        while(!(checkOutPage.getPageHeader().contains("Shipping"))){
-            checkOutPage.proceedCheckOut();
-        }
-        checkOutPage.AcceptAgreements();
         checkOutPage.proceedCheckOut();
-        checkOutPage.DoPayment();
-        checkOutPage.ConfirmPurchase();
-        assertTrue(checkOutPage.getPageHeader().contains("Order confirmation"),"Order not confirmed!");
-        assertTrue(checkOutPage.getSuccessMsg()
-                .contains("Your order on My Store is complete."),
-                "Order is not completed!");
+        if (checkOutPage.getPageHeader().contains("ADDRESSES")) {
+            checkOutPage.confirmAddress();
+        }
+        if (checkOutPage.getPageHeader().contains("SHIPPING")) {
+            checkOutPage.acceptAgreements();
+            checkOutPage.confirmCourier();
+        }
+        checkOutPage.doPayment();
+        checkOutPage.confirmPurchase();
+        assertTrue(checkOutPage.getPageHeader().contains("ORDER CONFIRMATION"), "Order not confirmed!");
     }
-
 }
