@@ -19,6 +19,7 @@ public class ChromeDriverManager extends DriverManager {
 		options.addArguments("disable-infobars");
 		//options.setHeadless(true);
 //		options.setBinary("C:\\Users\\%USERNAME%\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe");
+		options.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
 
 		return options;
 	}
