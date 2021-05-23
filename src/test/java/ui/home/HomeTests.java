@@ -1,11 +1,8 @@
-package ui.Home;
+package ui.home;
 
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.*;
 import ui.base.BaseTests;
-import utils.RandomDigits;
 
 import static org.testng.Assert.assertTrue;
 
