@@ -49,7 +49,7 @@ Install and set up Jenkins Fork the project to your account Configure to Jenkins
 `.github/workflows/maven.yml`
 - check https://github.com/MonaMohamed/spirteCloud/actions
 
-**Approach used to select Scenarios **
+**Approach used to select Scenarios**
 - Tended to test the most common used pages and at the same time
  cover the most important functionality such as login / forget password / add to cart / checkout 
 
@@ -57,5 +57,3 @@ Install and set up Jenkins Fork the project to your account Configure to Jenkins
 - Apply test pyramid which says More unit tests then integrations test 
 and finally at the top of pyramid apply E2e tests
 - Integrate project with https://www.calliope.pro/
-
-- 
