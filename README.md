@@ -42,12 +42,7 @@ or cmd and type below commands ========> mvn test
 Install and set up Jenkins Fork the project to your account Configure to Jenkins as maven project and build the test.
 
 **Method3 : To Run manually**
-Download all the below required jars and configure in build path
-• Download and add Selenium Jars to the project build path Go to http://www.seleniumhq.org/download/ Download Selenium Client & WebDriver Language Bindings for Java and add to Java build path.
-
-• Download and set Web driver for example chromedriver to invoke the Chrome browser (default browser).
-
-• Download the project, Open the project using IDE and run the testng.xml as testng suite to obtain the results.
+• Clone the project, Open the project using IntelliJ IDE and run the testng.xml as testng suite to obtain the results.
 
 **Builld Project through Github CI/CD**
 - With every push or pull request the project will be built through github actions
