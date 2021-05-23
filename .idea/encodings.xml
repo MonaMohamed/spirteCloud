@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java/main/ChromeDriverManager.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/main/DriverManager.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/main/DriverManagerFactory.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/main/FirefoxDriverManager.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/main/IEDriverManager.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/main/IOSDriverManager.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/main/SafariDriverManger.java" charset="windows-1252" />
+  </component>
+</project>
